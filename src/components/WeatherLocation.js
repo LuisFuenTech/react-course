@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 import Location from './Location'
 import WeatherData from './WeatherData'
 
