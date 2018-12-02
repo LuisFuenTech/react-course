@@ -1,14 +1,11 @@
 import React from 'react'
-import WeatherIcons from 'react-weathericons'
 import PropTypes from 'prop-types'
+import './style.css'
 
 const WeatherExtraInfo = ({humidity, wind}) => (
-    <div>
-        <WeatherIcons name="day-sleet" size="2x" />
-        <span> {humidity} </span>
-
-        <WeatherIcons name="strong-wind" size="2x" />
-        <span> {wind + ' wind'} </span> 
+    <div className="weatherExtraInfoCont">
+        <span className ="extraInfoText"> {`Humidity: ${humidity}`} </span>
+        <span className ="extraInfoText"> {`Winds: ${wind}`} </span> 
     </div>
 )
 

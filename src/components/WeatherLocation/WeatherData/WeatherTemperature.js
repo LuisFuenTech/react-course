@@ -1,12 +1,13 @@
 import React from 'react'
 import WeatherIcons from 'react-weathericons'
 import PropTypes from 'prop-types'
+import './style.css'
 import {CLOUD,
         CLOUDY,
         SUN,
         RAIN,
         SNOW,
-        WINDY} from '../constanst/weathers'
+        WINDY} from '../../../constanst/weathers'
 
 const stateToIconName = (state) => {
     switch(state){
@@ -22,20 +23,21 @@ const stateToIconName = (state) => {
 
 const getWeatherIcon = (state) => {
     return(
-        <WeatherIcons name={stateToIconName(state)} size="2x" />
+        <WeatherIcons className="wicon" name={stateToIconName(state)} size="4x" />
     )
 }
 
 const WeatherTemperature = ({temperature, state}) => (
-            <div>
+            <div className="weatherTemperatureCont">
                 {getWeatherIcon(state)}
-                <span> {`${temperature}`} </span>
+                <span className="temperature"> {`${temperature}`} </span>
+                <span className="temperaturetype">°C</span>
             </div>
-    )
+)
 
 //Validar los valores de las propiedades
 WeatherTemperature.propTypes = {
-    temperature: PropTypes.number.isRequired,
+    temperature: PropTypes.string.isRequired,
     state: PropTypes.string
 }
 export default WeatherTemperature
